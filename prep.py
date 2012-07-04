@@ -67,14 +67,12 @@ def procesar_seccion(pagina, entidad, seccion):
     if inv and "no existe" in inv.string:
         # Ya no hay seccion valida
         return None
-    pan = 0
-    pri = 0
-    prd = 0
-    errores = list()
-    valores = list()
+    resultados = Counter()
     casillas = tabla.find_all("tr", "data")
     for casilla in casillas:
         celdas = casilla.find_all("td")[2:16]
+        errores = list()
+        valores = list()
         try:
             for celda in celdas:
                 if not celda.string:
@@ -107,8 +105,9 @@ def procesar_seccion(pagina, entidad, seccion):
         pri = valores[1] + valores[3] + valores[7]
         prd = valores[2] + valores[4] + valores[5] + sum(valores[8:12])
         resultado = {"pan": pan, "pri": pri, "prd": prd, "error": errores, "total": sum(valores)}
-        print resultado
-        return resultado
+        resultados.update(resultado)
+    print resultados
+    return resultados
 
 class PREP(object):
     def __init__(self):
