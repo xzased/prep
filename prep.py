@@ -148,3 +148,4 @@ class PREP(object):
         for entidad, v in entidades:
             resultado = self.conteo_por_entidad(entidad)
             resultados.update(resultado)
+        return resultados
