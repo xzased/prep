@@ -115,6 +115,7 @@ class PREP(object):
         self.url = "http://prep.elecciones.terra.com.mx/prep/DetalleCasillas"
 
     def conteo_por_entidad(self, entidad):
+        no_data = 0
         edid = entidades.get(entidad, None)
         if not edid:
             raise ValueError("La entidad %s no es valida." % entidad)
@@ -125,12 +126,20 @@ class PREP(object):
             pagina = post.read()
             resultado = procesar_seccion(pagina, entidad, seccion)
             if resultado:
+                no_data = 0
                 resultados.update(resultado)
             else:
                 # Seccion no existe, desafortunadamente hay secciones contiguas
                 # a secciones invalidas asi que solo nos queda seguir con el
                 # siguiente, esa logica no me agrada
-                continue
+                no_data += 1
+                if no_data >= 20:
+                    # Si van mas de 20 secciones invalidas contiguas
+                    # creo que ya no hay mas secciones. Repito, esa logica
+                    # no me agrada.
+                    break
+                else:
+                    continue
         return resultados
 
     def conteo_por_seccion(self, entidad, seccion):
