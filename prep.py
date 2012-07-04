@@ -44,7 +44,7 @@ partidos = {
     3: "PRI",
     4: "PRD",
     5: "PRD",
-    6: "QUADRO",
+    6: "PANAL",
     7: "PRI",
     8: "PRD",
     9: "PRD",
