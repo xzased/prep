@@ -14,7 +14,7 @@ en forma programatica y cuenta los resultados.
 Si alguien sabe el numero maximo de secciones por entidad, favor de enviarlas a
 mi correo (rq.sysadmin@gmail.com) para modificar el codigo, ya que es tedioso y
 algo excesivo usar un rango tan amplio para cada entidad y tener que condicionar
-a 20 secciones invalidas contiguas, pero bueno.
+a 100 secciones invalidas contiguas, pero bueno.
 
 La unica dependencia es beautifulsoup 4.
 

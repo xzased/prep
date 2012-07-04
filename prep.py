@@ -133,8 +133,8 @@ class PREP(object):
                 # a secciones invalidas asi que solo nos queda seguir con el
                 # siguiente, esa logica no me agrada
                 no_data += 1
-                if no_data >= 20:
-                    # Si van mas de 20 secciones invalidas contiguas
+                if no_data >= 100:
+                    # Si van mas de 100 secciones invalidas contiguas
                     # creo que ya no hay mas secciones. Repito, esa logica
                     # no me agrada.
                     break
