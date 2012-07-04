@@ -11,6 +11,10 @@ y los errores que se hallaron detallando la entidad, seccion y tipo de error.
 Esta herramienta NO hackea el IFE, simplemente obtiene los resultados de la pagina
 en forma programatica y cuenta los resultados.
 
+Si alguien sabe el numero maximo de secciones por entidad, favor de enviarlas a
+mi correo (rq.sysadmin@gmail.com) para modificar el codigo, ya que es tedioso y
+algo excesivo usar un rango tan amplio para cada entidad.
+
 Ejemplos
 ========
 
