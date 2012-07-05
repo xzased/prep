@@ -133,7 +133,6 @@ class PREP(object):
         if not edid:
             raise ValueError("La entidad %s no es valida." % entidad)
         resultados = Counter()
-        i = 0
         for seccion in secciones:
             params = urllib.urlencode({"idEdo": edid, "seccion": seccion})
             post = urllib.urlopen(self.url, params)
@@ -154,9 +153,6 @@ class PREP(object):
                     break
                 else:
                     continue
-            i += 1
-            if i > 50:
-                break
         return resultados
 
     def conteo_por_seccion(self, entidad, seccion):
